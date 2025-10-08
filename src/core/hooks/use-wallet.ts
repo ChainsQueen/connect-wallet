@@ -250,16 +250,17 @@ export function useWallet(): UseWalletReturn {
       // Fetch balance after successful connection
       await fetchBalance(address);
       
-    } catch (error: any) {
+    } catch (error: unknown) {
       let errorMessage = 'Failed to connect wallet.';
       
       // Handle specific error cases
-      if (error.code === 4001) {
+      const err = error as { code?: number; message?: string };
+      if (err.code === 4001) {
         errorMessage = 'Connection request rejected. Please approve the connection.';
-      } else if (error.code === -32002) {
+      } else if (err.code === -32002) {
         errorMessage = 'Connection request already pending. Please check MetaMask.';
-      } else if (error.message) {
-        errorMessage = error.message;
+      } else if (err.message) {
+        errorMessage = err.message;
       }
       
       setWalletState(prev => ({
@@ -314,7 +315,7 @@ export function useWallet(): UseWalletReturn {
       }
     };
 
-    const handleChainChanged = (chainIdHex: any) => {
+    const handleChainChanged = (chainIdHex: string) => {
       console.log(`🔄🔄🔄 chainChanged event FIRED! 🔄🔄🔄`);
       console.log(`Chain ID (hex): ${chainIdHex}`);
       console.log(`Chain ID (decimal): ${parseInt(chainIdHex, 16)}`);
@@ -328,7 +329,7 @@ export function useWallet(): UseWalletReturn {
     console.log('🧪 Testing event system...');
     const testHandler = () => console.log('✅ Test event fired!');
     window.ethereum.on('test', testHandler);
-    // @ts-ignore - testing event emission
+    // @ts-expect-error - testing event emission (emit may not exist on all providers)
     if (window.ethereum.emit) window.ethereum.emit('test');
     window.ethereum.removeListener('test', testHandler);
 
