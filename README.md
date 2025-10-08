@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/YOUR_USERNAME/connect-wallet/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/connect-wallet/actions/workflows/ci.yml)
 
-A modern, production-ready Ethereum wallet integration built with React, TypeScript, and ethers.js.
+A modern, production-ready wallet integration built with React, TypeScript, and ethers.js.
 
 ## 🚀 Quick Start
 
