@@ -23,6 +23,7 @@ This project implements a complete wallet connection feature using **ethers.js v
 - **Account Switching**: Automatically detects and updates when user switches accounts
 - **Network Changes**: Handles network switching gracefully
 - **Loading States**: Visual feedback during connection process
+- **Light/Dark Mode**: Theme toggle with localStorage persistence and system preference detection
 
 ## Architecture
 
@@ -32,14 +33,15 @@ This project implements a complete wallet connection feature using **ethers.js v
 src/
 ├── core/
 │   └── hooks/
-│       └── use-wallet.ts          # Custom hook for wallet state management
+│       ├── use-wallet.ts          # Custom hook for wallet state management
+│       └── use-theme.ts           # Custom hook for theme management
 ├── partials/
 │   ├── wallet-connect.tsx         # Main wallet UI component
-│   └── wallet-connect.css         # Component styles
+│   └── theme-toggle.tsx           # Theme toggle button component
 ├── types/
 │   └── ethereum.d.ts              # TypeScript declarations for window.ethereum
 ├── App.tsx                        # Main application component
-└── App.css                        # Application styles
+└── index.css                      # Global styles and Tailwind imports
 ```
 
 ### Key Components
@@ -87,7 +89,31 @@ React component providing the user interface:
 - Visual status indicators (green/red dots)
 - Smooth animations and transitions
 
-#### 3. **Type Definitions** (`src/types/ethereum.d.ts`)
+#### 3. **useTheme Hook** (`src/core/hooks/use-theme.ts`)
+
+Custom React hook that manages theme state:
+
+**State Management:**
+- `theme`: Current theme ('light' or 'dark')
+- `isDark`: Boolean computed from theme state
+
+**Methods:**
+- `toggleTheme()`: Switches between light and dark modes
+
+**Features:**
+- Persists theme preference in localStorage
+- Detects system color scheme preference on first load
+- Updates document class for Tailwind dark mode support
+
+#### 4. **ThemeToggle Component** (`src/partials/theme-toggle.tsx`)
+
+Floating button component for theme switching:
+- Fixed position in top-right corner
+- Sun icon for light mode, moon icon for dark mode
+- Smooth transitions and hover effects
+- Accessible with ARIA labels
+
+#### 5. **Type Definitions** (`src/types/ethereum.d.ts`)
 
 TypeScript declarations for MetaMask's `window.ethereum` provider:
 - Ensures type safety throughout the application

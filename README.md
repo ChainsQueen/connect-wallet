@@ -31,6 +31,7 @@ Visit `http://localhost:5173/connect-wallet/` and click "Connect Wallet" to conn
 - ✅ **Error Handling** - Comprehensive error messages
 - ✅ **Auto-reconnection** - Remembers previous connection
 - ✅ **Account Switching** - Detects and updates on account change
+- ✅ **Light/Dark Mode** - Toggle between themes with preference persistence
 - ✅ **Modern UI** - Beautiful gradient design with animations
 
 ## 📚 Documentation
