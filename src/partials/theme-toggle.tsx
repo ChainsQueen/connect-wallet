@@ -21,7 +21,7 @@ export function ThemeToggle() {
         console.log('Theme toggle clicked, current:', theme);
         toggleTheme();
       }}
-      className="fixed top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-purple-800/40 backdrop-blur-md border border-purple-200/50 dark:border-purple-400/30 hover:bg-white/20 dark:hover:bg-purple-700/50 transition-colors duration-300 shadow-lg z-50"
+      className="fixed top-6 right-6 p-3 rounded-full bg-indigo-100/50 dark:bg-indigo-950/60 backdrop-blur-md border border-indigo-200/50 dark:border-indigo-700/40 hover:bg-indigo-200/60 dark:hover:bg-indigo-900/70 transition-colors duration-300 shadow-lg z-50"
       aria-label="Toggle theme"
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
@@ -37,7 +37,7 @@ export function ThemeToggle() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-slate-800"
+          className="text-indigo-900"
         >
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
         </svg>
