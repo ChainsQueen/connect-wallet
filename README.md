@@ -1,8 +1,15 @@
 # Wallet Connection Demo
 
-[![CI](https://github.com/YOUR_USERNAME/connect-wallet/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/connect-wallet/actions/workflows/ci.yml)
+[![CI](https://github.com/ChainsQueen/connect-wallet/actions/workflows/ci.yml/badge.svg)](https://github.com/ChainsQueen/connect-wallet/actions/workflows/ci.yml)
+[![Deploy](https://github.com/ChainsQueen/connect-wallet/actions/workflows/deploy.yml/badge.svg)](https://github.com/ChainsQueen/connect-wallet/actions/workflows/deploy.yml)
+[![React](https://img.shields.io/badge/React-19.1-61dafb?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![ethers.js](https://img.shields.io/badge/ethers.js-6.15-2535a0?logo=ethereum&logoColor=white)](https://docs.ethers.org/)
+[![Vite](https://img.shields.io/badge/Vite-7.1-646cff?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A modern, production-ready wallet integration built with React, TypeScript, and ethers.js.
+A modern, production-ready wallet integration built with React, TypeScript, and ethers.js supporting 40+ blockchain networks.
 
 ## 🚀 Quick Start
 
