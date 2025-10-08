@@ -13,8 +13,8 @@ A modern, production-ready wallet integration with multi-chain support built wit
 
 ## 📸 Dark Mode
 
-![Disconnected](screenshots/1.png)
-![Connected](screenshots/2.png)
+![Disconnected](docs/screenshots/1.png)
+![Connected](docs/screenshots/2.png)
 
 ## 🚀 Quick Start
 
