@@ -15,7 +15,7 @@ export function ThemeToggle() {
         console.log('Theme toggle clicked, current:', theme);
         toggleTheme();
       }}
-      className="fixed top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-white/10 backdrop-blur-md border border-white/20 dark:border-white/20 hover:bg-white/20 dark:hover:bg-white/20 transition-all duration-300 shadow-lg hover:scale-110 z-50"
+      className="fixed top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-purple-800/40 backdrop-blur-md border border-purple-200/50 dark:border-purple-400/30 hover:bg-white/20 dark:hover:bg-purple-700/50 transition-all duration-300 shadow-lg hover:scale-110 z-50"
       aria-label="Toggle theme"
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
