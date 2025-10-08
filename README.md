@@ -1,4 +1,62 @@
-# React + TypeScript + Vite
+# Ethereum Wallet Connection Demo
+
+A modern, production-ready Ethereum wallet integration built with React, TypeScript, and ethers.js.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+Visit `http://localhost:5173` and click "Connect Wallet" to connect your MetaMask wallet.
+
+## ✨ Features
+
+- ✅ **Connect/Disconnect Wallet** - Seamless MetaMask integration
+- ✅ **Display Wallet Address** - Formatted and user-friendly
+- ✅ **Show ETH Balance** - Real-time balance display
+- ✅ **Error Handling** - Comprehensive error messages
+- ✅ **Auto-reconnection** - Remembers previous connection
+- ✅ **Account Switching** - Detects and updates on account change
+- ✅ **Modern UI** - Beautiful gradient design with animations
+
+## 📚 Documentation
+
+See [WALLET_INTEGRATION.md](./WALLET_INTEGRATION.md) for complete documentation including:
+- Architecture overview
+- Implementation details
+- Usage guide
+- Troubleshooting
+
+## 🛠️ Tech Stack
+
+- **React 19.1.1** - UI framework
+- **TypeScript 5.9.3** - Type safety
+- **ethers.js 6.15.0** - Ethereum interaction
+- **Vite 7.1.7** - Build tool
+
+## 📋 Requirements
+
+- Node.js 18+
+- MetaMask browser extension
+- pnpm (or npm/yarn)
+
+## 🏗️ Project Structure
+
+```
+src/
+├── core/hooks/          # Business logic (useWallet hook)
+├── partials/            # UI components (WalletConnect)
+├── types/               # TypeScript declarations
+├── App.tsx              # Main application
+└── App.css              # Global styles
+```
+
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
