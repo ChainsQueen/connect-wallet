@@ -17,7 +17,11 @@ function App() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-300 dark:via-blue-400 dark:to-cyan-400 bg-clip-text text-transparent"
+          whileHover={{ 
+            scale: 1.05,
+            transition: { duration: 0.3, ease: "easeOut" }
+          }}
+          className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-300 dark:via-blue-400 dark:to-cyan-400 bg-clip-text text-transparent cursor-default"
           style={{ fontFamily: 'Space Grotesk, sans-serif' }}
         >
           Wallet Integration Demo
@@ -26,7 +30,12 @@ function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="text-lg text-slate-700 dark:text-purple-200/80 max-w-2xl mx-auto leading-relaxed"
+          whileHover={{ 
+            scale: 1.02,
+            y: -2,
+            transition: { duration: 0.2, ease: "easeOut" }
+          }}
+          className="text-lg text-slate-700 dark:text-purple-200/80 max-w-2xl mx-auto leading-relaxed cursor-default"
         >
           Connect your MetaMask wallet to interact with the Ethereum blockchain
         </motion.p>
