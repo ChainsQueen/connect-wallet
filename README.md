@@ -21,7 +21,7 @@ pnpm install
 pnpm dev
 ```
 
-Visit `http://localhost:5173` and click "Connect Wallet" to connect your MetaMask wallet.
+Visit `http://localhost:5173/connect-wallet/` and click "Connect Wallet" to connect your MetaMask wallet.
 
 ## ✨ Features
 
