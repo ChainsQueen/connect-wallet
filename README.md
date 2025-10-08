@@ -9,7 +9,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1-06b6d4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A modern, production-ready wallet integration built with React, TypeScript, and ethers.js supporting 40+ blockchain networks.
+A modern, production-ready wallet integration with multi-chain support built with React, TypeScript, and ethers.js.
 
 ## 🚀 Quick Start
 
