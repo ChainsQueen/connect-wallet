@@ -1,4 +1,4 @@
-# Ethereum Wallet Integration Documentation
+# Wallet Integration Documentation
 
 ## Overview
 
@@ -101,6 +101,10 @@ TypeScript declarations for MetaMask's `window.ethereum` provider:
 - **TypeScript 5.9.3**: Type safety
 - **ethers.js 6.15.0**: Ethereum blockchain interaction
 - **Vite 7.1.7**: Build tool and dev server
+
+### What is Ethers?
+
+The ethers.js library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem. It was originally designed for use with ethers.io and has since expanded into a more general-purpose library.
 
 ### Web3 Integration
 
