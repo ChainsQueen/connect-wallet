@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useTheme } from '../core/hooks/use-theme';
 
 /**
@@ -10,12 +11,17 @@ export function ThemeToggle() {
   console.log('Current theme:', theme);
 
   return (
-    <button
+    <motion.button
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      whileHover={{ scale: 1.1, rotate: 15 }}
+      whileTap={{ scale: 0.95, rotate: -15 }}
       onClick={() => {
         console.log('Theme toggle clicked, current:', theme);
         toggleTheme();
       }}
-      className="fixed top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-purple-800/40 backdrop-blur-md border border-purple-200/50 dark:border-purple-400/30 hover:bg-white/20 dark:hover:bg-purple-700/50 transition-all duration-300 shadow-lg hover:scale-110 z-50"
+      className="fixed top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-purple-800/40 backdrop-blur-md border border-purple-200/50 dark:border-purple-400/30 hover:bg-white/20 dark:hover:bg-purple-700/50 transition-colors duration-300 shadow-lg z-50"
       aria-label="Toggle theme"
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
@@ -60,6 +66,6 @@ export function ThemeToggle() {
           <path d="m19.07 4.93-1.41 1.41" />
         </svg>
       )}
-    </button>
+    </motion.button>
   );
 }
