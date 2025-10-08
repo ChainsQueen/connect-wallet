@@ -96,7 +96,7 @@ export function WalletConnect() {
             </div>
 
             <p className="text-center my-6 text-sm leading-relaxed opacity-95">
-              Connect your Ethereum wallet to get started. Make sure you have MetaMask installed.
+              Connect your wallet to get started. Make sure you have MetaMask installed.
             </p>
 
             <button
