@@ -11,6 +11,11 @@
 
 A modern, production-ready wallet integration with multi-chain support built with React, TypeScript, and ethers.js.
 
+## 📸 Dark Mode
+
+![Dark Mode - Disconnected](./1.png)
+![Dark Mode - Connected](./2.png)
+
 ## 🚀 Quick Start
 
 ```bash
