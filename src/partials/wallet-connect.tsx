@@ -17,6 +17,9 @@ export function WalletConnect() {
     nativeTokenSymbol,
   } = useWallet();
 
+  // Debug: Log what the component receives
+  console.log(`🎨 UI Render - Network: ${networkName}, Token: ${nativeTokenSymbol}, Balance: ${balance}`);
+
   /**
    * Format wallet address for display (0x1234...5678)
    */
@@ -28,7 +31,7 @@ export function WalletConnect() {
     <div className="flex justify-center items-center p-8 min-h-[400px]">
       <div className="bg-gradient-to-br from-purple-600 to-purple-900 rounded-3xl p-10 max-w-xl w-full shadow-2xl text-white transition-transform duration-300 hover:-translate-y-1">
         <h2 className="text-3xl font-bold mb-6 text-center drop-shadow-md">
-          Ethereum Wallet
+          Wallet Connect
         </h2>
         
         {/* Error Display */}
