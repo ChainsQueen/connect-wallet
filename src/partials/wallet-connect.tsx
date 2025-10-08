@@ -186,7 +186,7 @@ export function WalletConnect() {
               transition={{ delay: 0.6 }}
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-4 px-8 text-lg font-semibold rounded-xl cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-500 dark:via-blue-500 dark:to-cyan-500 text-white shadow-[0_4px_20px_rgba(147,51,234,0.3)] dark:shadow-[0_4px_20px_rgba(147,51,234,0.6)] hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 dark:hover:from-purple-400 dark:hover:via-blue-400 dark:hover:to-cyan-400 hover:shadow-[0_6px_25px_rgba(147,51,234,0.4)] dark:hover:shadow-[0_6px_25px_rgba(147,51,234,0.8)] disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full py-4 px-8 text-lg font-semibold rounded-xl cursor-pointer flex items-center justify-center gap-2 uppercase tracking-wide bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 dark:from-purple-700 dark:via-purple-600 dark:to-indigo-700 text-white shadow-[0_4px_20px_rgba(147,51,234,0.3)] dark:shadow-[0_4px_20px_rgba(147,51,234,0.4)] hover:from-purple-700 hover:via-blue-700 hover:to-indigo-700 dark:hover:from-purple-600 dark:hover:via-purple-500 dark:hover:to-indigo-600 hover:shadow-[0_6px_25px_rgba(147,51,234,0.4)] dark:hover:shadow-[0_6px_25px_rgba(147,51,234,0.5)] disabled:opacity-70 disabled:cursor-not-allowed"
               onClick={connectWallet}
               disabled={isConnecting}
             >
