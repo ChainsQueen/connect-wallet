@@ -37,7 +37,7 @@ function App() {
           }}
           className="text-lg text-indigo-900 dark:text-indigo-300/80 max-w-2xl mx-auto leading-relaxed cursor-default font-medium"
         >
-          Connect your MetaMask wallet to interact with the Ethereum blockchain
+          Connect your MetaMask wallet to view your balance and interact with multiple blockchain networks
         </motion.p>
       </motion.header>
       
