@@ -100,6 +100,9 @@ export function useWallet(): UseWalletReturn {
       31337: 'Hardhat Network',
       // Intuition
       13579: 'Intuition Testnet',
+      // Sei
+      1329: 'Sei Mainnet',
+      713715: 'Sei Testnet',
     };
     return networks[chainId] || `Unknown Network (${chainId})`;
   };
@@ -158,6 +161,9 @@ export function useWallet(): UseWalletReturn {
       1337: 'ETH',
       31337: 'ETH',
       13579: 'TRUST',
+      // Sei
+      1329: 'SEI',
+      713715: 'SEI',
     };
     return symbols[chainId] || 'ETH';
   };
