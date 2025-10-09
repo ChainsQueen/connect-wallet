@@ -11,7 +11,20 @@
 
 A modern, production-ready wallet integration with multi-chain support built with React, TypeScript, and ethers.js.
 
-## 📸 Dark Mode
+## 📑 Table of Contents
+
+- [Screenshots](#-screenshots)
+- [Quick Start](#-quick-start)
+- [Features](#-features)
+- [Supported Networks](#-supported-networks)
+- [Testing](#-testing)
+- [Tech Stack](#️-tech-stack)
+- [Requirements](#-requirements)
+- [Project Structure](#️-project-structure)
+- [Documentation](#-documentation)
+- [Development](#-development)
+
+## 📸 Screenshots
 
 ![Disconnected](screenshots/1.png)
 ![Connected](screenshots/2.png)
@@ -30,14 +43,53 @@ Visit `http://localhost:5173/connect-wallet/` and click "Connect Wallet" to conn
 
 ## ✨ Features
 
+- ✅ **Multi-Chain Support** - 42+ blockchain networks including Ethereum, Polygon, Arbitrum, Base, Sei, and more
 - ✅ **Connect/Disconnect Wallet** - Seamless MetaMask integration
 - ✅ **Display Wallet Address** - Formatted and user-friendly
-- ✅ **Show ETH Balance** - Real-time balance display
+- ✅ **Real-time Balance** - Shows balance in native token (ETH, MATIC, BNB, SEI, etc.)
+- ✅ **Network Detection** - Automatically detects and displays current network
 - ✅ **Error Handling** - Comprehensive error messages
 - ✅ **Auto-reconnection** - Remembers previous connection
 - ✅ **Account Switching** - Detects and updates on account change
+- ✅ **Network Switching** - Handles network changes gracefully
 - ✅ **Light/Dark Mode** - Toggle between themes with preference persistence
 - ✅ **Modern UI** - Beautiful gradient design with animations
+
+## 🌐 Supported Networks
+
+The wallet supports **42 blockchain networks** across multiple ecosystems:
+
+### Mainnets (17)
+- **Ethereum** - Ethereum Mainnet
+- **Layer 2s** - Arbitrum One, Arbitrum Nova, Optimism, Base, zkSync Era, Linea, Scroll
+- **Alt L1s** - Polygon, BSC, Avalanche C-Chain, Fantom Opera, Mantle, Celo, Gnosis Chain, Moonbeam
+- **Emerging** - Sei Mainnet
+
+### Testnets (23)
+Ethereum (Goerli, Sepolia, Holesky), Polygon (Mumbai, Amoy), BSC, Arbitrum (Goerli, Sepolia), Optimism (Goerli, Sepolia), Base (Goerli, Sepolia), Avalanche Fuji, Fantom, zkSync Era, Linea, Scroll Sepolia, Mantle, Celo Alfajores, Gnosis Chiado, Moonbase Alpha, Sei Testnet, Intuition Testnet
+
+### Development (2)
+Localhost, Hardhat Network
+
+> **Note**: The wallet automatically detects the network and displays the correct native token symbol (ETH, MATIC, BNB, AVAX, FTM, SEI, etc.)
+
+## 🧪 Testing
+
+### Run Network Validation Tests
+
+```bash
+# Run all network configuration tests
+pnpm test:networks
+```
+
+This validates:
+- ✅ All 42 network names are correctly mapped
+- ✅ All native token symbols are properly configured
+- ✅ Network detection logic works as expected
+
+**Test Results**: 84/84 tests passing (42 networks × 2 validations)
+
+See [tests/README.md](./tests/README.md) for detailed testing documentation.
 
 ## 📚 Documentation
 
@@ -49,10 +101,22 @@ See [WALLET_INTEGRATION.md](./WALLET_INTEGRATION.md) for complete documentation 
 
 ## 🛠️ Tech Stack
 
-- **React 19.1.1** - UI framework
-- **TypeScript 5.9.3** - Type safety
-- **ethers.js 6.15.0** - Ethereum interaction
-- **Vite 7.1.7** - Build tool
+- **React 19.1.1** - Modern UI framework with hooks and concurrent features
+- **TypeScript 5.9.3** - Type safety and enhanced developer experience
+- **ethers.js 6.15.0** - Complete library for Ethereum Blockchain and multi-chain interaction
+- **Vite 7.1.7** - Fast build tool with HMR (Hot Module Replacement)
+- **Tailwind CSS 4.1** - Utility-first CSS framework for styling
+- **Framer Motion 12.23** - Production-ready animation library
+
+### What is ethers.js?
+
+The ethers.js library aims to be a complete and compact library for interacting with the Ethereum Blockchain and its ecosystem. It was originally designed for use with ethers.io and has since expanded into a more general-purpose library.
+
+**Key features used in this project:**
+- `BrowserProvider` - Connects to MetaMask's injected provider
+- `formatEther` - Converts wei to human-readable token amounts
+- Network detection and chain ID management
+- Account and balance queries
 
 ## 📋 Requirements
 
@@ -63,84 +127,66 @@ See [WALLET_INTEGRATION.md](./WALLET_INTEGRATION.md) for complete documentation 
 ## 🏗️ Project Structure
 
 ```
-src/
-├── core/hooks/          # Business logic (useWallet hook)
-├── partials/            # UI components (WalletConnect)
-├── types/               # TypeScript declarations
-├── App.tsx              # Main application
-└── App.css              # Global styles
+connect-wallet/
+├── src/
+│   ├── core/
+│   │   └── hooks/
+│   │       ├── use-wallet.ts      # Wallet connection & network detection
+│   │       └── use-theme.ts       # Theme management
+│   ├── partials/
+│   │   ├── wallet-connect.tsx     # Main wallet UI component
+│   │   └── theme-toggle.tsx       # Theme toggle button
+│   ├── types/
+│   │   └── ethereum.d.ts          # TypeScript declarations
+│   ├── App.tsx                    # Main application
+│   └── index.css                  # Global styles
+├── tests/
+│   ├── network-validation.test.js # Network configuration tests
+│   ├── network-utils.ts           # Testing utilities
+│   └── README.md                  # Test documentation
+└── package.json
 ```
 
-## React + TypeScript + Vite
+## 🛠️ Development
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Available Scripts
 
-Currently, two official plugins are available:
+```bash
+# Start development server
+pnpm dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Build for production
+pnpm build
 
-## React Compiler
+# Preview production build
+pnpm preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# Run linter
+pnpm lint
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Run network tests
+pnpm test:networks
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Adding New Networks
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Add network configuration to `src/core/hooks/use-wallet.ts`:
+   - Add chain ID and name to `getNetworkName()`
+   - Add chain ID and token symbol to `getNativeTokenSymbol()`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Add test cases to `tests/network-validation.test.js` and `tests/network-utils.ts`
+
+3. Run tests to verify:
+   ```bash
+   pnpm test:networks
+   ```
+
+4. Commit changes with descriptive message
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details
+
+---
+
+**Built with** ❤️ **using React + TypeScript + Vite + ethers.js**
